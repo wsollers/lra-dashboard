@@ -1,0 +1,82 @@
+{
+  "generated_at": "2026-07-12T00:00:00+00:00",
+  "state": "open",
+  "repos": [
+    "wsollers/lra-volume-i",
+    "wsollers/lra-volume-ii"
+  ],
+  "totals": {
+    "issue_count": 3,
+    "proof_issue_count": 1,
+    "by_repo": {
+      "wsollers/lra-volume-i": 2,
+      "wsollers/lra-volume-ii": 1
+    },
+    "by_volume": {
+      "i": 2,
+      "ii": 1
+    },
+    "by_severity": {
+      "error": 2,
+      "warning": 1
+    },
+    "by_code": {
+      "missing_dependencies": 1,
+      "proof_file_missing_return": 1,
+      "toolkit_missing_table": 1
+    }
+  },
+  "issues": [
+    {
+      "repo": "wsollers/lra-volume-i",
+      "number": 101,
+      "title": "[validator][error] toolkit_missing_table in book-sets/notes/toolkit.tex:12",
+      "state": "open",
+      "url": "https://github.com/wsollers/lra-volume-i/issues/101",
+      "created_at": "2026-07-12T00:00:00Z",
+      "updated_at": "2026-07-12T00:00:00Z",
+      "fingerprint": "sample1",
+      "volume": "i",
+      "severity": "error",
+      "code": "toolkit_missing_table",
+      "path": "book-sets/notes/toolkit.tex",
+      "line": 12,
+      "message": "Toolkit box must use a tabular summary.",
+      "proof_related": false
+    },
+    {
+      "repo": "wsollers/lra-volume-i",
+      "number": 102,
+      "title": "[validator][warning] proof_file_missing_return in book-sets/proofs/prf-example.tex:8",
+      "state": "open",
+      "url": "https://github.com/wsollers/lra-volume-i/issues/102",
+      "created_at": "2026-07-12T00:00:00Z",
+      "updated_at": "2026-07-12T00:00:00Z",
+      "fingerprint": "sample2",
+      "volume": "i",
+      "severity": "warning",
+      "code": "proof_file_missing_return",
+      "path": "book-sets/proofs/prf-example.tex",
+      "line": 8,
+      "message": "Proof file is missing return navigation.",
+      "proof_related": true
+    },
+    {
+      "repo": "wsollers/lra-volume-ii",
+      "number": 44,
+      "title": "[validator][error] missing_dependencies in book-analysis/notes/order.tex:23",
+      "state": "open",
+      "url": "https://github.com/wsollers/lra-volume-ii/issues/44",
+      "created_at": "2026-07-12T00:00:00Z",
+      "updated_at": "2026-07-12T00:00:00Z",
+      "fingerprint": "sample3",
+      "volume": "ii",
+      "severity": "error",
+      "code": "missing_dependencies",
+      "path": "book-analysis/notes/order.tex",
+      "line": 23,
+      "message": "The theorem-like block is missing a dependencies block.",
+      "proof_related": false
+    }
+  ]
+}

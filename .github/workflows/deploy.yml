@@ -1,0 +1,50 @@
+name: Deploy Dashboard
+
+on:
+  schedule:
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout dashboard
+        uses: actions/checkout@v4
+
+      - name: Checkout governance
+        uses: actions/checkout@v4
+        with:
+          repository: wsollers/lra-governance
+          path: lra-governance
+
+      - name: Export dashboard data
+        env:
+          GH_TOKEN: ${{ secrets.LRA_DASHBOARD_PAT || github.token }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: python lra-governance/tools/governance/export_validator_issue_dashboard.py --output public/data/dashboard-data.json
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

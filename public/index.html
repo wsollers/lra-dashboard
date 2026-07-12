@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LRA Validation Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>LRA Validation Dashboard</h1>
+        <p id="generated">Loading validation issue data...</p>
+      </div>
+      <label class="toggle">
+        <input id="proofOnly" type="checkbox">
+        <span>Proof issues</span>
+      </label>
+    </header>
+
+    <main>
+      <section class="metrics" aria-label="Validation totals">
+        <article>
+          <span>Total open issues</span>
+          <strong id="totalIssues">0</strong>
+        </article>
+        <article>
+          <span>Proof issues</span>
+          <strong id="proofIssues">0</strong>
+        </article>
+        <article>
+          <span>Error issues</span>
+          <strong id="errorIssues">0</strong>
+        </article>
+        <article>
+          <span>Repositories</span>
+          <strong id="repoCount">0</strong>
+        </article>
+      </section>
+
+      <section class="grid">
+        <div class="panel">
+          <h2>By Volume</h2>
+          <div id="volumeBars" class="bars"></div>
+        </div>
+        <div class="panel">
+          <h2>By Code</h2>
+          <div id="codeBars" class="bars"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="tableHeader">
+          <h2>Issues</h2>
+          <input id="search" type="search" placeholder="Filter by repo, code, path, message">
+        </div>
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Repo</th>
+                <th>Severity</th>
+                <th>Code</th>
+                <th>Path</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tbody id="issueRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
