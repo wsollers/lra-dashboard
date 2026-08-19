@@ -1,0 +1,36 @@
+<!--
+GENERATED POINTER WRAPPER — DO NOT EDIT BY HAND.
+
+Source repo: wsollers/lra-governance
+Canonical overlay: capabilities/overlays/lra-dashboard.md
+
+Regenerate from lra-governance.
+Emergency downstream edits must be ported upstream before regeneration.
+-->
+
+# Claude Instructions
+
+@AGENTS.md
+
+This repository uses canonical LRA governance by pointer, not by copied rules.
+
+Repository: `lra-dashboard`
+Canonical repo overlay: `capabilities/overlays/lra-dashboard.md`
+Canonical route resolver:
+`python <governance-root>/scripts/govpy.py capabilities/resolve.py --repo lra-dashboard --task "<user task>" --root <repo-root>`
+Human route index (lazy reference only): `capabilities/task-index.md`
+
+Resolve canonical governance in this order:
+
+1. `LRA_GOVERNANCE_ROOT`;
+2. sibling `../lra-governance`;
+3. an explicit `lra-governance` checkout supplied by the build image or task.
+
+If canonical governance cannot be resolved, stop and report that
+`lra-governance` is not present.
+
+If import semantics are unavailable, follow `AGENTS.md` in this repository as
+the local pointer wrapper, then run the resolver. Do not treat this file as a
+local source of truth.
+
+Provider note: Claude should import or follow `AGENTS.md`, then follow canonical governance.
